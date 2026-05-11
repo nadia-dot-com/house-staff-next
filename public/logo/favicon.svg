@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+
+  <!-- tło -->
+  <rect width="100" height="100" fill="white"></rect>
+
+  <!-- roof -->
+  <polygon points="10,45 50,15 90,45" fill="#c89b4a"></polygon>
+
+  <!-- chimney -->
+  <rect x="65" y="20" width="6" height="12" fill="#c89b4a"></rect>
+
+  <!-- HS text -->
+  <text x="50" y="75" text-anchor="middle" font-family="serif" font-size="38" fill="#111">
+        HS
+  </text>
+
+</svg>
