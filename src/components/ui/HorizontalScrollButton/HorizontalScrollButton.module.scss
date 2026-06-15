@@ -1,0 +1,73 @@
+@use "@/styles/variables" as v;
+
+.horizontalScrollButton {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+
+  background-color: v.$white;
+  color: rgba(v.$dark, 0.9);
+  transition: all 500ms ease;
+  z-index: 10;
+  opacity: 0.9;
+
+  &:hover {
+    background-color: v.$color-accent-dark;
+    color: rgba(v.$white, 0.9);
+  }
+
+  &:disabled {
+    display: none;
+  }
+  &.left {
+    left: 50px;
+  }
+
+  &.right {
+    right: 50px;
+  }
+
+  .icon {
+    width: 30px;
+    height: 30px;
+    stroke: currentColor;
+    stroke-width: 1px;
+    fill: none;
+  }
+
+  @media (max-width: 992px) {
+    width: 40px;
+    height: 40px;
+    &.left {
+      left: 20px;
+    }
+    &.right {
+      right: 20px;
+    }
+    .icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    width: 35px;
+    height: 35px;
+    &.left {
+      left: 10px;
+    }
+    &.right {
+      right: 10px;
+    }
+    .icon {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}

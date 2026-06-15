@@ -1,0 +1,123 @@
+@use "@/styles/variables" as v;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  background: v.$body-bg;
+  color: v.$body-text;
+  line-height: 1.4;
+}
+
+main {
+  flex: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    color: v.$color-accent-400;
+  }
+}
+
+input {
+  font-family: inherit;
+  border: none;
+  border-bottom: 1px solid v.$border-color;
+  outline: none;
+  transition: v.$border-color 0.2s ease-in-out;
+  font-size: 16px;
+
+  &:focus {
+    border-bottom-color: v.$border-focus-color;
+  }
+
+  &[readonly] {
+    opacity: 0.7;
+    cursor: not-allowed;
+    border-bottom: none;
+  }
+}
+
+legend {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+button {
+  all: unset;
+  display: inline-block; 
+  box-sizing: border-box;
+  cursor: pointer; 
+  font: inherit; 
+  color: inherit; 
+
+  &:focus {
+    outline: none; 
+  }
+
+  &:focus-visible {
+    outline: 2px solid v.$color-blue;
+    outline-offset: 2px;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+textarea {
+  grid-column: 1 / 3;
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  color: inherit;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  legend {
+    font-size: 16px;
+    margin-bottom: 0px;
+  }
+}
+
+@media (max-width: 576px) {
+  input {
+    font-size: 14px;
+  }
+
+  label {
+    font-size: 14px;
+  }
+}

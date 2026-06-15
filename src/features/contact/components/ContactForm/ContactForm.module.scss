@@ -1,0 +1,129 @@
+@use "@/styles/variables" as v;
+@use "@/styles/mixins" as m;
+
+.formWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: v.$color-gray-extra-light;
+  margin-top: 50px;
+  padding: 80px 20px;
+  width: 100%;
+
+  @media (max-width: 576px) {
+    padding: 40px 12px;
+  }
+}
+
+.form {
+  background: transparent;
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+
+  @media (max-width: 992px) {
+    max-width: 800px;
+  }
+}
+
+.title {
+  font-size: 25px;
+  font-weight: 500;
+  color: #525151;
+  margin-bottom: 10px;
+
+  @media (max-width: 992px) {
+    font-size: 21px;
+  }
+
+  @media (max-width: 576px) {
+    font-size: 19px;
+  }
+}
+
+.desc {
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0 20px;
+  margin-bottom: 10px;
+}
+
+.inputBox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 40px;
+  row-gap: 20px;
+  text-align: left;
+  margin-bottom: 30px;
+
+  .screenReadersOnly {
+    position: absolute;
+    height: 0px;
+    width: 0px;
+    border: 0px;
+    padding: 0px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
+  @media (max-width: 576px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.messageTitle {
+  grid-column: 1 / 3;
+  font-weight: 500;
+  color: v.$color-black;
+
+  @media (max-width: 576px) {
+    font-size: 14px;
+  }
+}
+
+.field {
+  @include m.form-field;
+}
+
+.textarea {
+  resize: none;
+  height: 100px;
+  grid-column: 1 / 3;
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  color: inherit;
+  line-height: 1.5;
+}
+
+.result {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-weight: 500;
+
+  &::before {
+    line-height: 1;
+    font-size: 17px;
+    align-items: center;
+
+    @media (max-width: 576px) {
+      font-size: 14px;
+    }
+  }
+
+  &.success {
+    color: v.$color-emerald-500;
+    &::before {
+      content: "✔ ";
+    }
+  }
+  &.error {
+    color: v.$color-red-500;
+    &::before {
+      content: "✖ ";
+    }
+  }
+}

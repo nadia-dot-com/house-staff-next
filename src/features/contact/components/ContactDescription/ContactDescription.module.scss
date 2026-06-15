@@ -1,0 +1,39 @@
+@use "@/styles/variables" as v;
+@use "@/styles/mixins" as m;
+
+.background {
+  @include m.flex-center(column);
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  background-color: v.$color-accent-100;
+  position: relative;
+  width: 100%;
+  height: 350px;
+
+  .text {
+    color: v.$white;
+    font-size: 50px;
+    font-family: "Cormorant";
+    font-weight: 400;
+    margin: 10px;
+
+    @media (max-width: 1200px) {
+      font-size: 40px;
+    }
+
+    @media (max-width: 992px) {
+      font-size: 33px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 25px;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 20px;
+    }
+  }
+}

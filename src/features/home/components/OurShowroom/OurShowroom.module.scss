@@ -1,0 +1,69 @@
+.ourshowroomSection {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #f6f6f3;
+  margin: 40px 0;
+  overflow: hidden;
+
+  .text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+    gap: 20px;
+
+    .title {
+      color: #727224;
+      font-weight: 400;
+    }
+
+    .button {
+      align-self: flex-start;
+      margin-left: -10px;
+    }
+
+    @media (max-width: 768px) {
+      padding: 30px;
+      gap: 10px;
+
+      .title {
+        font-size: 26px;
+      }
+
+      .desc {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .img {
+    height: auto;
+    width: 55%;
+    transition: transform 500ms ease;
+    object-fit: cover;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+
+    .img {
+      width: 100%;
+    }
+
+    .text {
+      padding: 30px 15px;
+      gap: 10px;
+
+      .title {
+        font-size: 21px;
+      }
+    }
+  }
+}

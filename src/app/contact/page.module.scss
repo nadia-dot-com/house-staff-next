@@ -1,0 +1,9 @@
+@use "@/styles/mixins" as m;
+
+.contactWrapper {
+  @include m.flex-center(column);
+
+  text-align: center;
+  padding: 40px 0;
+  width: 100%;
+}

@@ -1,0 +1,21 @@
+@use "@/styles/variables" as v;
+
+.price {
+  margin: 0px 0px;
+  color: v.$color-black;
+  font-weight: 500;
+
+  .discountContainer {
+    display: flex;
+    gap: 5px;
+
+    .oldPrice {
+      color: v.$old-price-color;
+      text-decoration: line-through;
+    }
+
+    .discountPrice {
+      color: v.$color-red-600;
+    }
+  }
+}

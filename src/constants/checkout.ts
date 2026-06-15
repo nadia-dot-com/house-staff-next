@@ -1,0 +1,6 @@
+export const CHECKOUT_STEP = {
+  CART_OVERVIEW: 1,     
+  SHIPPING_ADDRESS: 2, 
+  ORDER_REVIEW: 3,     
+  ORDER_COMPLETE: 4,   
+}

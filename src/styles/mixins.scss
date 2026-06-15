@@ -1,0 +1,79 @@
+@use "./variables.scss" as v;
+
+@mixin flex-center($direction: row) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $direction;
+}
+
+@mixin status-container {
+  @include flex-center(column);
+  width: 280px;
+  background-color: v.$white;
+  padding: 20px;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    width: 250px;
+  }
+
+  @media (max-width: 576px) {
+    width: 200px;
+  }
+}
+
+@mixin summary-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid v.$border-color;
+  padding: 5px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+@mixin form-field {
+  width: 100%;
+  padding: 10px 0;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid v.$border-color;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+
+  &::placeholder {
+    color: #717171;
+  }
+
+  &:focus {
+    border-color: v.$border-focus-color;
+  }
+}
+
+@mixin input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 28px;
+
+  label {
+    font-weight: 400;
+    color: #333;
+  }
+
+  input,
+  select {
+    margin-top: 6px;
+    padding: 10px 4px;
+  }
+
+  @media (max-width: 576px) {
+    margin-bottom: 15px;
+  }
+}

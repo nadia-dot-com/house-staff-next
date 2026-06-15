@@ -1,0 +1,41 @@
+@use "@/styles/variables" as v;
+
+.collectionWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  background-color: v.$white;
+  overflow-y: visible;
+  width: 100%;
+  z-index: 1;
+
+  .collection {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+
+    overflow-y: hidden;
+    overflow-x: auto;
+    align-items: flex-start;
+
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @media (max-width: 992px) {
+      gap: 18px;
+    }
+
+    @media (max-width: 568px) {
+      gap: 12px;
+    }
+
+    @media (max-width: 400px) {
+      gap: 0px;
+    }
+  }
+}

@@ -1,0 +1,250 @@
+@use "@/styles/mixins" as m;
+@use "@/styles/variables" as v;
+
+.saleSection {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  height: 600px;
+  // color: #ca3500;
+
+  @media (max-width: 768px) {
+    height: 450px;
+  }
+  @media (max-width: 576px) {
+    height: 650px;
+  }
+  @media (max-width: 400px) {
+    height: 750px;
+  }
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (max-width: 576px) {
+    background-position: -80px top;
+  }
+  @media (max-width: 400px) {
+    background-position: -190px top;
+  }
+}
+
+.products {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+
+  .contentLimit {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    height: 100%;
+  }
+}
+
+.chair,
+.table,
+.vase {
+  position: absolute;
+  img {
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+.chair {
+  top: 110px;
+  left: 40px;
+
+  img {
+    width: 390px;
+  }
+
+  @media (max-width: 1200px) {
+    top: 180px;
+    img {
+      width: 330px;
+    }
+  }
+  @media (max-width: 992px) {
+    top: 260px;
+    img {
+      width: 270px;
+    }
+  }
+  @media (max-width: 768px) {
+    top: 200px;
+    img {
+      width: 200px;
+    }
+  }
+  @media (max-width: 576px) {
+    top: 400px;
+  }
+  @media (max-width: 400px) {
+    top: 500px;
+    img {
+      width: 180px;
+    }
+  }
+}
+
+.table {
+  top: 75px;
+  right: 100px;
+
+  img {
+    width: 320px;
+  }
+
+  @media (max-width: 1200px) {
+    right: 50px;
+    img {
+      width: 280px;
+    }
+  }
+  @media (max-width: 992px) {
+    top: 180px;
+    img {
+      width: 250px;
+    }
+  }
+  @media (max-width: 768px) {
+    top: 155px;
+    right: 45px;
+    img {
+      width: 180px;
+    }
+  }
+  @media (max-width: 576px) {
+    top: 60px;
+    right: 20px;
+    img {
+      width: 160px;
+    }
+  }
+  @media (max-width: 400px) {
+    top: 90px;
+    img {
+      width: 140px;
+    }
+  }
+}
+
+.vase {
+  top: 300px;
+  right: 60px;
+  img {
+    width: 140px;
+  }
+
+  @media (max-width: 1200px) {
+    right: 20px;
+    img {
+      width: 120px;
+    }
+  }
+  @media (max-width: 992px) {
+    top: 350px;
+    img {
+      width: 100px;
+    }
+  }
+  @media (max-width: 768px) {
+    top: 270px;
+    img {
+      width: 80px;
+    }
+  }
+  @media (max-width: 576px) {
+    top: 470px;
+    right: 40px;
+  }
+  @media (max-width: 400px) {
+    top: 585px;
+    img {
+      width: 72px;
+    }
+  }
+}
+
+.percent {
+  position: absolute;
+  top: -35px;
+  left: 12px;
+
+  background: v.$white;
+  padding: 10px 10px;
+
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  color: v.$color-red-600;
+
+  @media (max-width: 1200px) {
+    left: -8px;
+  }
+  @media (max-width: 768px) {
+    top: -30px;
+    left: -5px;
+    font-size: 14px;
+    padding: 8px;
+  }
+  @media (max-width: 400px) {
+    left: -10px;
+  }
+}
+
+.text {
+  @include m.flex-center(column);
+  text-align: center;
+  position: relative;
+  z-index: 2;
+
+  .title {
+    color: v.$color-accent-600;
+    font-weight: 300;
+    font-size: 100px;
+    font-family: "Cormorant", serif;
+
+    @media (max-width: 1200px) {
+      font-size: 80px;
+    }
+    @media (max-width: 992px) {
+      font-size: 60px;
+    }
+    @media (max-width: 576px) {
+      font-size: 40px;
+    }
+  }
+
+  .desc {
+    font-weight: 400;
+    margin-bottom: 8px;
+    @media (max-width: 1200px) {
+      font-size: 20px;
+    }
+    @media (max-width: 576px) {
+      font-size: 19px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    width: 40%;
+  }
+  @media (max-width: 576px) {
+    width: 90%;
+    margin-top: 50px;
+  }
+}
