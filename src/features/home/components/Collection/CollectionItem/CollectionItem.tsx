@@ -1,5 +1,4 @@
 import classes from "./CollectionItem.module.scss";
-import { useProducts } from "@/hooks/products/useProducts";
 import { Collection, HotSpotProps } from "@/types/api/collection";
 import { Hotspot } from "../Hotspot/Hotspot";
 import { Product } from "@/types/api/product";

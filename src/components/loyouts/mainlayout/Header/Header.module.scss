@@ -1,0 +1,41 @@
+@use "@/styles/variables" as v;
+
+.header {
+  display: flex;
+  position: sticky;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  width: 100%;
+
+  border-bottom: 1px solid v.$border-color;
+  background-color: rgba(v.$white, 0.9);
+  backdrop-filter: blur(5px);
+
+  transition: transform 0.3s ease;
+  z-index: 40;
+  padding: 0px 20px;
+
+  &.headerHidden {
+    transform: translateY(-100%);
+  }
+
+  &.headerVisible {
+    transform: translateY(0);
+  }
+
+  .logo {
+    font-weight: 400;
+    font-size: 25px;
+    text-decoration: none;
+    transition: color 0.4s ease;
+
+    &:hover {
+      color: v.$color-accent-400;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 5px 20px;
+  }
+}

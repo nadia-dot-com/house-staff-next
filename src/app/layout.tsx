@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.scss";
+import classes from "./layout.module.scss";
 import { siteConfig } from "../config/metadata";
+import { Providers } from "@/components/providers/Providers";
+import Footer from "@/components/loyouts/mainlayout/Footer/Footer";
+import { Header } from "@/components/loyouts/mainlayout/Header/Header";
+import { ClientLayout } from "@/components/loyouts/mainlayout/ClientLayout/ClientLayout";
+import { ToastContainer } from "react-toastify";
+import { UserLoader } from "@/components/providers/UserLoader";
 
 export const metadata: Metadata = {
   title: siteConfig.name,
@@ -30,7 +37,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -38,8 +45,28 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {children}
-        </body>
+        <Providers>
+          <UserLoader />
+
+          <Header />
+
+          <ClientLayout>{children}</ClientLayout>
+
+          <Footer />
+
+          <ToastContainer
+            role="alert"
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            closeOnClick
+            pauseOnHover
+            draggable
+            theme="light"
+            className={classes.toastContainer}
+          />
+        </Providers>
+      </body>
     </html>
   );
 }

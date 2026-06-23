@@ -1,0 +1,15 @@
+@use "@/styles/variables" as v;
+
+.productPage {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: v.$white;
+  z-index: 10;
+  animation: slideDown 0.35s ease forwards;
+  margin-bottom: 30px;
+}

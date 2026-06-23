@@ -1,4 +1,4 @@
-import { routes } from "@/constants/routes";
+import { routes } from "@/constants/navigation/routes";
 import classes from "./PopularCategory.module.scss";
 import { Category } from "@/types/api/category";
 import Link from "next/link";

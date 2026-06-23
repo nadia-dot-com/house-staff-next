@@ -1,0 +1,104 @@
+@use "@/styles/variables" as v;
+
+.desktopCategories {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  border-bottom: 1px solid v.$color-gray-light;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
+}
+
+.category {
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 300ms ease;
+
+  &:hover {
+    color: v.$color-accent-400;
+  }
+
+  &.saleCategory {
+    color: v.$color-red-600;
+
+    &:hover {
+      color: v.$color-red-500;
+    }
+  }
+}
+
+.mobileCategories {
+  display: none;
+  position: relative;
+  padding: 0;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  z-index: 30;
+
+  @media (max-width: 1200px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .categoryButton {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 12px 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 300ms ease;
+  }
+
+  .mobileDropdownList {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background: v.$white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+    .mobileCategory {
+      display: block;
+      width: 100%;
+      padding: 15px 20px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: color 300ms ease;
+
+      &:hover {
+        color: v.$color-accent-400;
+      }
+
+      &.saleCategory {
+        color: v.$color-red-600;
+
+        &:hover {
+          color: v.$color-red-500;
+        }
+      }
+    }
+  }
+}
+
+.icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  flex-shrink: 0;
+  @media (max-width: 768px) {
+    top: 7px;
+    width: 18px;
+    height: 18px;
+  }
+}

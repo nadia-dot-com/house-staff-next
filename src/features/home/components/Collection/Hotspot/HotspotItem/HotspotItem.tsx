@@ -4,7 +4,7 @@ import { Price } from "@/components/ui/Price/Price";
 import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import { routes } from "@/constants/routes";
+import { routes } from "@/constants/navigation/routes";
 
 export function HotspotItem({ item }: { item: Product }) {
   return (

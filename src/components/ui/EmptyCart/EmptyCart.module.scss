@@ -1,0 +1,14 @@
+.emptyCart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  margin: 10px 0 10px 0px;
+  font-weight: 500;
+
+  .shopingIcon {
+    position: relative;
+    top: 1px;
+    margin-left: 6px;
+  }
+}

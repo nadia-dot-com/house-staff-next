@@ -1,0 +1,10 @@
+@use "@/styles/variables" as v;
+
+.newProductLabel {
+  background-color: v.$color-accent-olive;
+  color: v.$white;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 3px 5px;
+  z-index: 20;
+}

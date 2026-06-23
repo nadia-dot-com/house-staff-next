@@ -1,0 +1,27 @@
+.productsContainer {
+  box-sizing: border-box;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 60dvh;
+  transition: margin-top 0.5s ease-in-out;
+
+  .empty{
+    margin: auto;
+    font-weight: 400;
+  }
+
+  .products {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 40px;
+
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

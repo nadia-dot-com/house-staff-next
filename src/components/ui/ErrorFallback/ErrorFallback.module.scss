@@ -1,0 +1,27 @@
+@use "@/styles/variables" as v;
+@use "@/styles/mixins" as m;
+
+.wrapper {
+  min-height: 90dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .errorFallback {
+    @include m.flex-center(column);
+    background-color: v.$white;
+    text-align: center;
+    width: 280px;
+    font-weight: 500;
+    font-size: 16px;
+
+    @media (max-width: 768px) {
+      width: 250px;
+    }
+
+    @media (max-width: 576px) {
+      width: 200px;
+      font-size: 14px;
+    }
+  }
+}

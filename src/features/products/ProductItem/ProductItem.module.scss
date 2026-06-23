@@ -1,0 +1,108 @@
+@use "@/styles/mixins" as m;
+@use "@/styles/variables" as v;
+
+.product {
+  position: relative;
+  background-color: v.$color-gray-extra-light;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  &.disableProduct {
+    opacity: 0.5 !important;
+  }
+
+  .img {
+    width: 100%;
+    max-height: 500px;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 500ms ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .labels {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+  }
+
+  .heartInCart {
+    position: absolute;
+    right: 15px;
+    bottom: 130px;
+    z-index: 12;
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: v.$color-accent-400;
+    }
+  }
+
+  .productInformation {
+    text-align: left;
+    padding-top: 20px;
+    margin: 10px 20px;
+    font-size: 14px;
+
+    .title {
+      font-weight: 500;
+      cursor: pointer;
+
+      .categoryTitle {
+        font-weight: 300;
+      }
+    }
+
+    .discountContainer {
+      display: flex;
+      gap: 5px;
+    }
+  }
+
+  .addToCart {
+    @include m.flex-center;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 26px;
+    height: 26px;
+    background: v.$color-black;
+    color: v.$white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.7;
+    padding: 0;
+    transition: all 500ms ease;
+
+    &:disabled {
+      opacity: 0.7 !important;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    svg {
+      position: static;
+      transform: none;
+      shape-rendering: crispEdges;
+      // color: white;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .img {
+      height: 400px;
+      object-fit: contain;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@use "@/styles/variables" as v;
+
+.layout {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+.toastContainer {
+  --toastify-color-progress-success: #{v.$color-accent-400};
+  top: 50px;
+
+  svg {
+    fill: v.$color-accent-400;
+  }
+
+  @media (max-width: 992px) {
+    font-size: 14px;
+
+    svg {
+      width: 19px;
+      height: 19px;
+    }
+
+    :global(.Toastify__progress-bar),
+    :global(.Toastify__progress-bar--wrp) {
+      height: 3px !important;
+    }
+
+    :global(.Toastify__toast-icon) {
+      margin-right: 6px !important;
+    }
+
+    :global(.Toastify__toast) {
+      width: 90% !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  }
+}

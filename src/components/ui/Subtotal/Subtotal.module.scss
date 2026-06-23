@@ -1,0 +1,38 @@
+@use "@/styles/variables" as v;
+
+.subtotalSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid v.$border-color;
+  padding: 5px;
+
+  .price {
+    font-size: 16px;
+    color: v.$color-black;
+    font-weight: 600;
+
+    .oldPrice {
+      font-size: 14px;
+      color: v.$old-price-color;
+      text-decoration: line-through;
+    }
+
+    .discountPrice {
+      font-size: 14px;
+      color: v.$color-red-600;
+    }
+  }
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+
+    .price {
+      font-size: 14px;
+    }
+  }
+}

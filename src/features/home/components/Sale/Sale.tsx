@@ -1,11 +1,11 @@
-'use client'
+"use client";
 
 import { Button } from "@/components/ui/Button/Button";
 import { categoriesGroups } from "@/constants/categories";
 import classes from "./Sale.module.scss";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { routes } from "@/constants/routes";
+import { routes } from "@/constants/navigation/routes";
 
 export function Sale() {
   const route = useRouter();

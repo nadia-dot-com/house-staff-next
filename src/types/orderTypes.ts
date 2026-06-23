@@ -9,6 +9,7 @@ export type OrderItem = {
   discount: number;
   categoryName: string;
   quantity: number;
+  stockQuantity: number;
 };
 
 export type OrderProps = {

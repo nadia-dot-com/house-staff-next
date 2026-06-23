@@ -31,6 +31,7 @@ export const cartSlice = createSlice({
           img: product.imagesUrls[0],
           categoryName: product.categoryName,
           quantity: 0,
+          stockQuantity: product.stockQuantity
         };
       }
 

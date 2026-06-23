@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import classes from "./PresentationItem.module.scss";
 import { PresentationProps } from "@/types/presentation";
@@ -7,10 +7,10 @@ import { Button } from "@/components/ui/Button/Button";
 import { PRESENTATION } from "../data/presentation";
 import { motion } from "motion/react";
 import { useRouter } from "next/navigation";
-import { routes } from "@/constants/routes";
+import { routes } from "@/constants/navigation/routes";
 
 export function PresentationItem({ item }: { item: PresentationProps }) {
-const router = useRouter();
+  const router = useRouter();
 
   return (
     <motion.div

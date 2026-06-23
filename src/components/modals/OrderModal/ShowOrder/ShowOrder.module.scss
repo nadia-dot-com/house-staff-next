@@ -1,0 +1,62 @@
+@use "@/styles/variables" as v;
+
+.showOrderWrapper {
+  margin-bottom: 20px;
+  height: auto;
+  overflow-y: auto;
+}
+
+.orderList {
+  max-height: 600px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 5px 30px;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 0px 0px 0px 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #afadad;
+    border-radius: 10px;
+
+    &:hover {
+      background: #555;
+    }
+  }
+
+  @media (max-width: 400px) {
+    margin: 0px 5px;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  font-weight: 600;
+
+  .clearButton {
+    color: v.$white;
+    background-color: v.$color-black;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px;
+    transition: transform 0.4s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.subtotal {
+  padding: 10px;
+}

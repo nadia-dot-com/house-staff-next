@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useRef } from "react";
 
 export type Listener<T extends Event> = (event: T) => void;

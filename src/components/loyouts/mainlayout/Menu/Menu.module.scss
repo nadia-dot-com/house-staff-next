@@ -1,0 +1,99 @@
+@use "@/styles/variables" as v;
+
+.nav {
+  .desktopMenu {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    align-items: center;
+    gap: 25px;
+    font-size: 14px;
+  }
+
+  .navIcon {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    svg {
+      display: flex;
+      line-height: 1;
+      vertical-align: middle;
+      font-weight: normal;
+    }
+  }
+
+  .mobileMenu {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 20px;
+    z-index: 40;
+  }
+
+  .burgerMenu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s linear;
+    background-color: rgba(v.$white, 0.9);
+    backdrop-filter: blur(5px);
+  }
+
+  .burgerIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      color: v.$color-black;
+    }
+  }
+
+  .burgerList {
+    position: absolute;
+    top: 41px;
+    right: 0;
+    left: 10;
+    width: 100%;
+    min-width: 200px;
+    background: v.$white;
+    opacity: 0.9;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    list-style: none;
+    padding-inline-start: 0px;
+    font-size: 14px;
+    background-color: rgba(v.$white, 0.9);
+    backdrop-filter: blur(5px);
+
+    li {
+      border-bottom: 1px solid v.$color-gray-light;
+      width: 100%;
+      padding: 12px 15px;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    @media (max-width: 576px) {
+      left: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .desktopMenu {
+      display: none;
+    }
+
+    .mobileMenu {
+      display: flex;
+    }
+  }
+}

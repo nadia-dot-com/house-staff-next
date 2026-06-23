@@ -1,0 +1,19 @@
+@use "@/styles/mixins" as m;
+
+.container {
+  @include m.flex-center(column);
+
+  min-height: 700px;
+  padding: 20px 0;
+  box-sizing: border-box;
+  gap: 10px;
+
+  .text {
+    text-align: center;
+    font-weight: 500;
+  }
+
+  .error {
+    font-size: 60px;
+  }
+}

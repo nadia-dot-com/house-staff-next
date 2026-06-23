@@ -1,0 +1,60 @@
+@use "@/styles/variables" as v;
+@use "@/styles/mixins" as m;
+
+.footer {
+  @include m.flex-center(column);
+  border-top: 1px solid v.$border-color;
+  padding: 40px 0;
+  gap: 10px;
+
+  .info {
+    @include m.flex-center(column);
+    text-align: center;
+
+    cursor: pointer;
+    font-weight: 500;
+    gap: 12px;
+    font-size: 14px;
+    padding: 0;
+
+    li {
+      @include m.flex-center;
+      transition: color 0.3s ease;
+      gap: 6px;
+
+      &:hover {
+        color: v.$color-accent-400;
+      }
+    }
+  }
+
+  .time {
+    cursor: auto;
+  }
+
+  .socials {
+    @include m.flex-center;
+    gap: 15px;
+    font-size: 22px;
+
+    a {
+      transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .contact {
+    font-size: 22px;
+    padding: 10px 0;
+    cursor: pointer;
+  }
+
+  .rights {
+    font-size: 14px;
+  }
+}
