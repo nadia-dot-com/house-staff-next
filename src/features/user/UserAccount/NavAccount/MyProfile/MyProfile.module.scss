@@ -1,0 +1,51 @@
+@use "@/mixins" as m;
+
+.formContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 20px;
+
+  .userForm {
+    max-width: 900px;
+    width: 100%;
+
+    .title {
+      text-align: center;
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    .subTitle {
+      margin-bottom: 10px;
+    }
+
+    .inputGroup {
+      @include m.input-group;
+    }
+
+    .buttonWrapper {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 992px) {
+      .title {
+        font-size: 22px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .title {
+        font-size: 18px;
+      }
+
+      .subTitle {
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}

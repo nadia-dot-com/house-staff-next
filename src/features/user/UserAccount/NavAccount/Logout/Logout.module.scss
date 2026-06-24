@@ -1,0 +1,16 @@
+@use "@/variables" as v;
+
+.logout {
+  display: inline-flex;
+  color: v.$color-black;
+  font-weight: 500;
+
+  &:hover {
+    color: v.$color-red-600;
+  }
+
+  .icon {
+    position: relative;
+    top: 3px;
+  }
+}

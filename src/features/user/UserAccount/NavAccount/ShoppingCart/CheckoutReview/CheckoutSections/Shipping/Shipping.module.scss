@@ -1,0 +1,47 @@
+.wrapper {
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 1px solid silver;
+  padding: 5px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 3px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.radio {
+  margin-right: 6px;
+  width: 14px;
+  height: 14px;
+}
+
+.price {
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    margin-bottom: 10px;
+  }
+
+  .title {
+    font-size: 16px;
+    margin-bottom: 0px;
+  }
+
+  .option {
+    padding: 8px 3px;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,10 @@
+@use "@/variables" as v;
+@use "@/mixins" as m;
+
+.checkoutSection {
+  @include m.summary-row;
+
+  .total {
+    color: v.$color-red-600;
+  }
+}

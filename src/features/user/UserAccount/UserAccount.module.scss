@@ -1,0 +1,25 @@
+.userWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 60vh;
+
+  .helloUser {
+    text-align: center;
+    font-size: 27px;
+    font-weight: 600;
+    font-family: "Cormorant";
+    font-style: italic;
+    padding: 15px;
+  }
+
+  .content {
+    padding: 20px 0;
+  }
+
+  @media (max-width: 576px) {
+    padding: 0;
+  }
+}

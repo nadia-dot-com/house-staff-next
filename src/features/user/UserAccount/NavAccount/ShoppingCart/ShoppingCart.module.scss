@@ -1,0 +1,16 @@
+@use "@/mixins" as m;
+
+.shoppingCart {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .orderContent {
+    @include m.flex-center;
+    padding: 20px;
+
+    @media (max-width: 576px) {
+      padding: 0;
+    }
+  }
+}

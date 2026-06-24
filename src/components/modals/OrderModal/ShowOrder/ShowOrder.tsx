@@ -2,7 +2,7 @@
 
 import classes from "./ShowOrder.module.scss";
 import { Button } from "@/components/ui/Button/Button";
-import { OrderItemRow } from "@/features/order/OrderItemRow/OrderItemRow";
+import { OrderItemRow } from "@/features/orders/OrderItemRow/OrderItemRow";
 import { Subtotal } from "@/components/ui/Subtotal/Subtotal";
 import { LoginButton } from "@/components/ui/LoginButton/LoginButton";
 import { useRouter } from "next/navigation";

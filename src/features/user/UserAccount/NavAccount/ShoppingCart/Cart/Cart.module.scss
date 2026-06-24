@@ -1,0 +1,12 @@
+@use "@/variables" as v;
+
+.orderList {
+  width: 100%;
+  text-align: center;
+  padding: 0;
+
+  .orderItem {
+    border-bottom: 1px solid v.$border-color;
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,18 @@
+@use "@/variables" as v;
+
+.wrap {
+  border: 1px solid v.$color-gray-dark;
+  padding: 20px;
+  margin: 20px;
+}
+
+.section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid v.$color-gray-light;
+  padding: 5px;
+}

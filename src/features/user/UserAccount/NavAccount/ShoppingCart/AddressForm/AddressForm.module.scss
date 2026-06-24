@@ -1,0 +1,52 @@
+@use "@/variables" as v;
+@use "@/mixins" as m;
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+
+  .addressForm {
+    width: 100%;
+    padding: 0 20px;
+
+    .title {
+      text-align: center;
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 20px;
+    }
+
+    .subTitle {
+      margin-bottom: 10px;
+    }
+
+    .inputGroup {
+      @include m.input-group;
+
+      textarea {
+        border: none;
+        border-bottom: 1px solid v.$border-color;
+        padding: 10px 0;
+        resize: none;
+        font-size: inherit;
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    .title {
+      font-size: 22px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .title {
+      font-size: 18px;
+    }
+
+    .subTitle {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+  }
+}

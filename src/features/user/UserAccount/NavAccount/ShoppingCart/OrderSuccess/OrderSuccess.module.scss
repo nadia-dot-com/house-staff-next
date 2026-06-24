@@ -1,0 +1,12 @@
+@use "@/mixins" as m;
+
+.orderSuccess {
+  @include m.status-container;
+
+  .title {
+    text-align: center;
+    @media (max-width: 576px) {
+      font-size: 17px;
+    }
+  }
+}

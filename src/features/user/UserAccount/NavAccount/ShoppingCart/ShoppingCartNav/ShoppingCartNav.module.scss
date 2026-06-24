@@ -1,0 +1,35 @@
+@use "@/mixins" as m;
+@use "@/variables" as v;
+
+.steps {
+  @include m.flex-center;
+  gap: 10px;
+  text-align: center;
+  font-weight: 500;
+  font-style: italic;
+  margin-bottom: 20px;
+  padding: 0;
+
+  .stepSpan {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &.activeStep {
+      color: v.$color-accent-400;
+    }
+  }
+
+  @media (max-width: 576px) {
+    gap: 8px;
+
+    .stepSpan {
+      font-size: 14px;
+      gap: 8px;
+
+      svg {
+        width: 16px;
+      }
+    }
+  }
+}

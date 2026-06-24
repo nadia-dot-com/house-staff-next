@@ -1,10 +1,12 @@
 import { Category } from '@/types/api/category';
 import { API_URL } from '@/config/env';
-import { cacheTag } from 'next/cache';
+import { cacheLife, cacheTag } from 'next/cache';
+import { CACHE_TAGS } from '@/constants/cache';
 
 export const fetchCategories = async (): Promise<Category[]> => {
    "use cache"
-    cacheTag();
+    cacheTag(CACHE_TAGS.categories);
+    cacheLife('days');
 
   const res = await fetch(`${API_URL}/categories`);
 
