@@ -1,21 +1,23 @@
 import classes from "./MyProfile.module.scss";
 import { ChangeEvent, FormEvent, useEffect, useMemo, useState } from "react";
-import { useUserContext } from "@/context/UserContext";
-import { Button } from "@/components/Button/Button";
-import { useUpdateUserProfile } from "@/hooks/user/useUpdateUserProfile";
-import { useOptions } from "@/hooks/options/useOptions";
 import isEqual from "lodash/isEqual";
 import omitBy from "lodash/omitBy";
-import { ERROR_MESSAGES } from "@/constants/messages";
-import { ErrorState } from "@/components/ErrorState/ErrorState";
+import { Country } from "@/types/api/options";
+import { Button } from "@/components/ui/Button/Button";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@/store/store";
+import { updateUserProfile } from "@/app/actions";
+import { setUserClient } from "@/store/slices/userSlice";
+import { toast } from "react-toastify";
+import { getErrorMessage } from "@/features/user/utils/helpers";
 
-export default function MyProfile() {
-  const { user } = useUserContext();
-  const updateProfileMutation = useUpdateUserProfile();
+export default function MyProfileView({ countries }: { countries: Country[] }) {
+  const { user } = useSelector((state: RootState) => state.user);
 
-  const { data } = useOptions();
+  if (!user) return;
 
-  const countries = data?.countries ?? [];
+  const [IsUpdating, setIsUpdating] = useState(false);
+  const dispatch = useDispatch();
 
   const [formState, setFormState] = useState({
     name: null as string | null,
@@ -39,13 +41,9 @@ export default function MyProfile() {
     });
   }, [user]);
 
-  if (!user) return <ErrorState message={ERROR_MESSAGES.UNAUTHORIZED} />;
-
   const { email } = user;
 
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>,
-  ) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
 
     setFormState((prev) => ({
@@ -65,18 +63,29 @@ export default function MyProfile() {
         city: user.city ?? null,
         country: user.country ?? null,
       },
-      (v) => v === null,
+      (v) => v === null
     );
 
     return !isEqual(cleanedForm, cleanedUser);
   }, [formState, user]);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!hasChanges) return;
 
-    updateProfileMutation.mutate(formState);
+    try {
+      setIsUpdating(true);
+
+      const updatedUser = await updateUserProfile(formState);
+      dispatch(setUserClient(updatedUser));
+
+      toast.success("Profile updated!");
+    } catch (error) {
+      toast.error(getErrorMessage(error));
+    } finally {
+      setIsUpdating(false);
+    }
   };
 
   return (
@@ -143,12 +152,7 @@ export default function MyProfile() {
 
         <div className={classes.inputGroup}>
           <label>Country / Region *</label>
-          <select
-            name="country"
-            value={formState.country ?? ""}
-            onChange={handleChange}
-            required
-          >
+          <select name="country" value={formState.country ?? ""} onChange={handleChange} required>
             <option value="" disabled>
               Select Country
             </option>
@@ -167,7 +171,7 @@ export default function MyProfile() {
             bgColor="black"
             textColor="white"
             text="• SAVE CHANGES"
-            disabled={!hasChanges}
+            disabled={!hasChanges || IsUpdating}
           />
         </div>
       </form>

@@ -13,14 +13,14 @@ export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    setUser(state: UserState, action: PayloadAction<UserData | null>) {
+    setUserClient(state: UserState, action: PayloadAction<UserData | null>) {
       state.user = action.payload;
     },
 
-    logout(state: UserState) {
+    logoutClient(state: UserState) {
       state.user = null;
     },
   },
 });
 
-export const {setUser, logout} = userSlice.actions; 
+export const {setUserClient, logoutClient} = userSlice.actions; 

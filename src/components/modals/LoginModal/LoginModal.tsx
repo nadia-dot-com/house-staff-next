@@ -1,3 +1,5 @@
+'use client'
+
 import classes from "./LoginModal.module.scss";
 import { LoginButton } from "@/components/ui/LoginButton/LoginButton";
 import { Modal } from "../Modal/Modal";

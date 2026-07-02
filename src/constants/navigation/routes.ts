@@ -1,6 +1,6 @@
 import { slugify } from "@/utils/slugify";
 
-const USER_ACCOUNT = "/user-account";
+const USER_ACCOUNT = "/user";
 
 export const routes = {
   home: "/",
@@ -15,6 +15,7 @@ export const routes = {
 
   userAccount: USER_ACCOUNT,
 
+  login: `${USER_ACCOUNT}/login`,
   profile: `${USER_ACCOUNT}/profile`,
   myOrders: `${USER_ACCOUNT}/my-orders`,
   myWishlist: `${USER_ACCOUNT}/my-wishlist`,
